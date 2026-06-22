@@ -47,4 +47,7 @@ jobs:
 
       # 3. Execute Pipeline
       - name: Run Pipeline
+        env:
+          GCS_BUCKET_NAME: ${{ secrets.GCS_BUCKET_NAME }}
+          GOOGLE_CLOUD_PROJECT: ${{ secrets.GOOGLE_CLOUD_PROJECT }}
         run: bash run_pipeline.sh
