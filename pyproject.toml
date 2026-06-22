@@ -1,0 +1,30 @@
+[project]
+name = "supermart-scraper"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Oluwaseun Ilori",email = "jideilori77@gmail.com"}
+]
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "scrapy (>=2.16.0,<3.0.0)",
+    "google-cloud-bigquery (>=3.42.0,<4.0.0)",
+    "pytest (>=9.1.0,<10.0.0)",
+    "python-dotenv (>=1.2.2,<2.0.0)",
+    "pydantic (>=2.13.4,<3.0.0)",
+    "loguru (>=0.7.3,<0.8.0)",
+    "bs4 (>=0.0.2,<0.0.3)",
+    "pyarrow (>=24.0.0,<25.0.0)",
+    "google-auth (>=2.55.0,<3.0.0)",
+    "google-cloud-storage (>=2.4.0,<3.2.0)",
+    "dbt-core (>=1.9,<2.0)",
+    "dbt-bigquery (>=1.9,<2.0)",
+    "apache-airflow (>=3.2.2,<4.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

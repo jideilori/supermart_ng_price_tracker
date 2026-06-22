@@ -1,0 +1,36 @@
+name: Daily Scraper
+on:
+  schedule:
+    - cron: '0 11 * * *' # Runs at GMT +1
+  workflow_dispatch:      # Lets you run it manually from the "Actions" tab
+
+jobs:
+  run-scraper:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+          
+      - run: pip install requests google-cloud-bigquery google-cloud-storage
+
+      # 2. Authenticate to Google Cloud via WIF
+      # This step generates a temporary background credentials file that the Google Cloud 
+      # Python SDK libraries automatically detect and use.
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
+
+      # 3. Execute Script (No manual env variable needed anymore!)
+      # The client libraries inside app.py look for the login automatically.
+      - name: Execute Script
+        run: python app.py
