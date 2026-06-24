@@ -1,4 +1,11 @@
 .env
+.env.*
+*.local
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
