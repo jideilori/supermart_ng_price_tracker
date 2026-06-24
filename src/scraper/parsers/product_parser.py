@@ -34,8 +34,6 @@ def parse_products(html: str):
 
     products = data.get("products", [])
 
-    # Normalize output immediately (important upgrade)
-    # return normalize_products(products)
     return [CleanedProductItem(**product) for product in normalize_products(products)]
 
 def normalize_products(products: ProductItem):

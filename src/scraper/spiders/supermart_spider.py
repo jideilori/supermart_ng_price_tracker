@@ -12,11 +12,23 @@ class SupermartSpider(scrapy.Spider):
     allowed_domains = ["supermart.ng", "www.supermart.ng"]
 
     start_urls = [
+        "https://www.supermart.ng/collections/uk-groceries?page=1",
         "https://www.supermart.ng/collections/fresh-food?page=1",
-        # "https://www.supermart.ng/collections/naija-food?page=1",
-        # "https://www.supermart.ng/collections/food-cupboard?page=1",
-        # "https://www.supermart.ng/collections/drinks?page=1",
-        # "https://www.supermart.ng/collections/health-wellness?page=1",
+        "https://www.supermart.ng/collections/naija-food?page=1",
+        "https://www.supermart.ng/collections/mile-12-market?page=1",
+        "https://www.supermart.ng/collections/food-cupboard?page=1",
+        "https://www.supermart.ng/collections/oil-sauces?page=1",
+        "https://www.supermart.ng/collections/drinks?page=1",
+        "https://www.supermart.ng/collections/alcohol?page=1",
+        "https://www.supermart.ng/collections/toiletries?page=1",
+        "https://www.supermart.ng/collections/cleaning?page=1",
+        "https://www.supermart.ng/collections/household?page=1",
+        "https://www.supermart.ng/collections/frozen?page=1",
+        "https://www.supermart.ng/collections/kitchen-dining?page=1",
+        "https://www.supermart.ng/collections/health-wellness?page=1",
+        "https://www.supermart.ng/collections/baby-kids?page=1",
+        "https://www.supermart.ng/collections/office-supplies?page=1",
+        "https://www.supermart.ng/collections/electronics?page=1"
     ]
 
     def start_requests(self):

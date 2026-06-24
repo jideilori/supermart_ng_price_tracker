@@ -32,6 +32,7 @@ class ProductValidationPipeline:
                 "errors": e.errors()
             }
 
+            self.bad_records.parent.mkdir(parents=True, exist_ok=True)
 
             with open(
                 self.bad_records,
